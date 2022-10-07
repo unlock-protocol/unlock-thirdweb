@@ -1,12 +1,12 @@
-# Unlock && Thirdweb
+# Using Thirdweb to deploy Public Locks!
 
-This project aims at making it easy for anyone to deploy Public Locks using Thirdweb's interfaces.
+This project aims at making it easy for anyone to deploy Public Locks using Thirdweb's interfaces. 
 
 To achieve this, we deployed a "proxy" contract that maps Thirdweb's `[IContractFactory](https://portal.thirdweb.com/contracts/IContractFactory)` factory with Unlock's factory contract.
 
 # Deploying the factory contract
 
-This should only be done once per network. We added a task for this.
+This should only be done once per network (and the Unlock team should probably do that for each network). We added a hardhat task for this.
 
 You can replace `goerli` with your network name, as long as the network is in the `hardhat.config.js` file. You will also need to add an Etherscan (or similar) API key for verification purposes!
 
