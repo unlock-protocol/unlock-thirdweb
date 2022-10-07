@@ -2,9 +2,9 @@
 
 This project aims at making it easy for anyone to deploy Public Locks using Thirdweb's interfaces. 
 
-To achieve this, we deployed a "proxy" contract that maps Thirdweb's `[IContractFactory](https://portal.thirdweb.com/contracts/IContractFactory)` factory with Unlock's factory contract.
+To achieve this, we deployed a "proxy" contract that maps Thirdweb's [`IContractFactory`](https://portal.thirdweb.com/contracts/IContractFactory) factory with Unlock's factory contract.
 
-# Deploying the factory contract
+## Deploying the factory contract
 
 This should only be done once per network (and the Unlock team should probably do that for each network). We added a hardhat task for this.
 
@@ -14,7 +14,7 @@ You can replace `goerli` with your network name, as long as the network is in th
 yarn hardhat run scripts/deploy.js --network goerli
 ```
 
-# Releasing `PublicLock`
+## Releasing `PublicLock`
 
 You need to do this from the Unlock Labs hardware wallet for the contract to appear [on this page with the previous releases](https://thirdweb.com/0xF5C28ce24Acf47849988f147d5C75787c0103534).
 
@@ -26,6 +26,6 @@ In the next section, enter the factory contract's address from the step above (i
 
 Finally, click on `Create Release`!
 
-# Deploying through ThirdWeb
+## Deploying through ThirdWeb
 
 At this point, you can use the ThirdWeb UI to deploy new locks and interface with them!
