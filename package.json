@@ -1,0 +1,16 @@
+{
+  "name": "unlock-thirdweb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:unlock-protocol/unlock-thirdweb.git",
+  "author": "Julien Genestoux <julien.genestoux@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@nomiclabs/hardhat-etherscan": "^3.1.0",
+    "@unlock-protocol/contracts": "^0.0.9",
+    "@unlock-protocol/hardhat-plugin": "^0.0.11",
+    "ethers": "^5.7.1",
+    "hardhat": "^2.11.2",
+    "hardhat-etherscan": "^1.0.1"
+  }
+}
