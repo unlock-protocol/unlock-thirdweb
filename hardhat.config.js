@@ -1,44 +1,29 @@
 require("@unlock-protocol/hardhat-plugin");
 require("@nomiclabs/hardhat-etherscan");
+const unlockNetwoks = require('@unlock-protocol/networks')
+
+const networks = {
+  hardhat: {
+    gas: 1000000000,
+    allowUnlimitedContractSize: true,
+    blockGasLimit: 1000000000,
+  },
+}
+
+Object.keys(unlockNetwoks).forEach((name) => {
+  if (['default', 'networks'].indexOf(name) == -1) {
+    networks[name] = {
+      url: unlockNetwoks[name].publicProvider,
+      accounts: [process.env.PKEY]
+    }
+  }
+})
+
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.17",
-  networks: {
-    hardhat: {
-      gas: 1000000000,
-      allowUnlimitedContractSize: true,
-      blockGasLimit: 1000000000,
-    },
-    polygon: {
-      url: "https://polygon-rpc.com/",
-      accounts: []
-    },
-    rinkeby: {
-      url: `https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161`,
-      accounts: []
-    },
-    xdai: {
-      url: `https://rpc.gnosischain.com`,
-      accounts: []
-    },
-    mainnet: {
-      url: `https://eth-mainnet.alchemyapi.io/v2/6idtzGwDtRbzil3s6QbYHr2Q_WBfn100`,
-      accounts: []
-    },
-    bsc: {
-      url: `https://bsc-dataseed.binance.org/`,
-      accounts: []
-    },
-    optimism: {
-      url: `https://mainnet.optimism.io`,
-      accounts: []
-    },
-    goerli: {
-      url: `https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161`,
-      accounts: [process.env.PKEY]
-    }
-  },
+  networks,
   etherscan: {
     apiKey: {
       polygon: 'W9TVEYKW2CDTQ94T3A2V93IX6U3IHQN5Y3',
@@ -46,8 +31,10 @@ module.exports = {
       mainnet: 'HPSH1KQDPJTNAPU3335G931SC6Y3ZYK3BF',
       rinkeby: 'HPSH1KQDPJTNAPU3335G931SC6Y3ZYK3BF',
       bsc: '6YUDRP3TFPQNRGGZQNYAEI1UI17NK96XGK',
-      xdai: 'api-key',
+      xdai: 'BSW3C3NDUUBWSQZJ5FUXBNXVYX92HZDDCV',
       optimisticEthereum: 'V51DWC44XURIGPP49X85VZQGH1DCBAW5EC',
+      avalanche: 'N4AF8AYN8PXY2MFPUT8PAFSZNVJX5Q814X',
+      arbitrumOne: 'W5XNFPZS8D6JZ5AXVWD4XCG8B5ZH5JCD4Y'
     }
   },
 };

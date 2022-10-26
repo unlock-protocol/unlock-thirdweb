@@ -7,8 +7,9 @@
   "license": "MIT",
   "dependencies": {
     "@nomiclabs/hardhat-etherscan": "^3.1.0",
-    "@unlock-protocol/contracts": "^0.0.9",
-    "@unlock-protocol/hardhat-plugin": "^0.0.11",
+    "@unlock-protocol/contracts": "^0.0.13",
+    "@unlock-protocol/hardhat-plugin": "^0.0.18",
+    "@unlock-protocol/networks": "^0.0.8",
     "ethers": "^5.7.1",
     "hardhat": "^2.11.2",
     "hardhat-etherscan": "^1.0.1"
