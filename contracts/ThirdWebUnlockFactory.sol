@@ -11,7 +11,7 @@ contract ThirdWebUnlockFactory {
   }
 
   function deployProxyByImplementation(address implementation, bytes calldata data, bytes32) external returns (address) {
-    IUnlockV11 unlock = IUnlockV11(unlockAddress);
+    IUnlockV11 unlock = IUnlockV11(unlockAddress); // The version of Unlock should actually not matter.
     uint16 v = unlock.publicLockVersions(implementation);
     
     address newLockAddress = unlock.createUpgradeableLockAtVersion(data, v);
